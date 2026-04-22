@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoodBoard - Votre Journal d'Humeur Personnel</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Background Decorations -->
+    <div class="bg-decoration blob-1"></div>
+    <div class="bg-decoration blob-2"></div>
+    <div class="bg-decoration blob-3"></div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                </svg>
+                <h1 class="logo-text">MoodBoard</h1>
+            </div>
+            <div class="header-actions">
+                <button class="btn-icon" id="notificationBtn" title="Notifications">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                        <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                    </svg>
+                </button>
+                <button class="btn-icon" id="themeToggle" title="Thème">
+                    <svg class="theme-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="theme-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <button class="nav-item active" data-view="today">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+                <span>Aujourd'hui</span>
+            </button>
+            <button class="nav-item" data-view="journal">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                </svg>
+                <span>Journal</span>
+            </button>
+            <button class="nav-item" data-view="insights">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="20" x2="18" y2="10"></line>
+                    <line x1="12" y1="20" x2="12" y2="4"></line>
+                    <line x1="6" y1="20" x2="6" y2="14"></line>
+                </svg>
+                <span>Analyses</span>
+            </button>
+            <button class="nav-item" data-view="settings">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="3"></circle>
+                    <path d="M12 1v6m0 6v6m8.66-13a9 9 0 1 1-17.32 0"></path>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                </svg>
+                <span>Paramètres</span>
+            </button>
+        </nav>
+
+        <!-- Content Area -->
+        <div class="content-area">
+            <!-- Today View -->
+            <div class="view active" id="todayView">
+                <div class="view-header">
+                    <h2 class="view-title">Comment vous sentez-vous aujourd'hui ?</h2>
+                    <p class="view-subtitle" id="todayDate"></p>
+                </div>
+
+                <div class="mood-selector-card">
+                    <h3 class="card-title">Sélectionnez votre humeur</h3>
+                    <div class="mood-grid">
+                        <button class="mood-btn" data-mood="ecstatic" data-emoji="🤩" data-color="#FFD93D">
+                            <span class="mood-emoji">🤩</span>
+                            <span class="mood-label">Extatique</span>
+                        </button>
+                        <button class="mood-btn" data-mood="happy" data-emoji="😊" data-color="#6BCB77">
+                            <span class="mood-emoji">😊</span>
+                            <span class="mood-label">Heureux</span>
+                        </button>
+                        <button class="mood-btn" data-mood="calm" data-emoji="😌" data-color="#A8D8EA">
+                            <span class="mood-emoji">😌</span>
+                            <span class="mood-label">Calme</span>
+                        </button>
+                        <button class="mood-btn" data-mood="neutral" data-emoji="😐" data-color="#C7C7C7">
+                            <span class="mood-emoji">😐</span>
+                            <span class="mood-label">Neutre</span>
+                        </button>
+                        <button class="mood-btn" data-mood="anxious" data-emoji="😰" data-color="#FFA07A">
+                            <span class="mood-emoji">😰</span>
+                            <span class="mood-label">Anxieux</span>
+                        </button>
+                        <button class="mood-btn" data-mood="sad" data-emoji="😢" data-color="#9FA8DA">
+                            <span class="mood-emoji">😢</span>
+                            <span class="mood-label">Triste</span>
+                        </button>
+                        <button class="mood-btn" data-mood="angry" data-emoji="😠" data-color="#FF6B6B">
+                            <span class="mood-emoji">😠</span>
+                            <span class="mood-label">Énervé</span>
+                        </button>
+                        <button class="mood-btn" data-mood="tired" data-emoji="😴" data-color="#B4A7D6">
+                            <span class="mood-emoji">😴</span>
+                            <span class="mood-label">Fatigué</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="journal-entry-card" id="journalEntryCard" style="display: none;">
+                    <h3 class="card-title">Écrivez vos pensées</h3>
+                    <textarea class="journal-textarea" id="journalText" placeholder="Qu'est-ce qui vous a marqué aujourd'hui ? Vos pensées, vos réflexions..."></textarea>
+                    
+                    <div class="tags-section">
+                        <h4 class="tags-title">Tags émotionnels</h4>
+                        <div class="tags-container">
+                            <button class="tag-chip" data-tag="gratitude">🙏 Gratitude</button>
+                            <button class="tag-chip" data-tag="stress">😓 Stress</button>
+                            <button class="tag-chip" data-tag="amour">❤️ Amour</button>
+                            <button class="tag-chip" data-tag="travail">💼 Travail</button>
+                            <button class="tag-chip" data-tag="famille">👨‍👩‍👧‍👦 Famille</button>
+                            <button class="tag-chip" data-tag="sante">🏥 Santé</button>
+                            <button class="tag-chip" data-tag="amis">👥 Amis</button>
+                            <button class="tag-chip" data-tag="hobby">🎨 Hobby</button>
+                            <button class="tag-chip" data-tag="nature">🌿 Nature</button>
+                            <button class="tag-chip" data-tag="repos">🛌 Repos</button>
+                        </div>
+                    </div>
+
+                    <div class="entry-actions">
+                        <button class="btn btn-secondary" id="cancelEntry">Annuler</button>
+                        <button class="btn btn-primary" id="saveEntry">Enregistrer</button>
+                    </div>
+                </div>
+
+                <div class="today-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon">🔥</div>
+                        <div class="stat-content">
+                            <p class="stat-value" id="streakCount">0</p>
+                            <p class="stat-label">Jours consécutifs</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">📝</div>
+                        <div class="stat-content">
+                            <p class="stat-value" id="totalEntries">0</p>
+                            <p class="stat-label">Entrées totales</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Journal View -->
+            <div class="view" id="journalView">
+                <div class="view-header">
+                    <h2 class="view-title">Votre Journal</h2>
+                    <div class="journal-filters">
+                        <select class="filter-select" id="filterMood">
+                            <option value="">Toutes les humeurs</option>
+                            <option value="ecstatic">Extatique</option>
+                            <option value="happy">Heureux</option>
+                            <option value="calm">Calme</option>
+                            <option value="neutral">Neutre</option>
+                            <option value="anxious">Anxieux</option>
+                            <option value="sad">Triste</option>
+                            <option value="angry">Énervé</option>
+                            <option value="tired">Fatigué</option>
+                        </select>
+                        <select class="filter-select" id="filterTag">
+                            <option value="">Tous les tags</option>
+                            <option value="gratitude">Gratitude</option>
+                            <option value="stress">Stress</option>
+                            <option value="amour">Amour</option>
+                            <option value="travail">Travail</option>
+                            <option value="famille">Famille</option>
+                            <option value="sante">Santé</option>
+                            <option value="amis">Amis</option>
+                            <option value="hobby">Hobby</option>
+                            <option value="nature">Nature</option>
+                            <option value="repos">Repos</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="journal-entries" id="journalEntries">
+                    <div class="empty-state">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                        </svg>
+                        <p>Aucune entrée pour le moment</p>
+                        <p class="empty-subtitle">Commencez par noter votre humeur d'aujourd'hui</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Insights View -->
+            <div class="view" id="insightsView">
+                <div class="view-header">
+                    <h2 class="view-title">Vos Analyses</h2>
+                    <button class="btn btn-primary" id="exportPdfBtn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7 10 12 15 17 10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                        Exporter PDF
+                    </button>
+                </div>
+
+                <div class="insights-grid">
+                    <div class="insight-card">
+                        <h3 class="card-title">Humeur des 30 derniers jours</h3>
+                        <canvas id="moodChart"></canvas>
+                    </div>
+
+                    <div class="insight-card">
+                        <h3 class="card-title">Répartition des humeurs</h3>
+                        <canvas id="moodDistribution"></canvas>
+                    </div>
+
+                    <div class="insight-card">
+                        <h3 class="card-title">Tags les plus fréquents</h3>
+                        <div class="tags-stats" id="tagsStats">
+                            <div class="empty-state-small">
+                                <p>Pas encore de données</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="insight-card">
+                        <h3 class="card-title">Tendances</h3>
+                        <div class="trends-list" id="trendsList">
+                            <div class="empty-state-small">
+                                <p>Ajoutez plus d'entrées pour voir les tendances</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Settings View -->
+            <div class="view" id="settingsView">
+                <div class="view-header">
+                    <h2 class="view-title">Paramètres</h2>
+                </div>
+
+                <div class="settings-section">
+                    <h3 class="settings-title">Rappels</h3>
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <p class="setting-label">Activer les rappels quotidiens</p>
+                            <p class="setting-description">Recevez une notification pour noter votre humeur</p>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="reminderToggle">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                    <div class="setting-item" id="reminderTimeContainer" style="display: none;">
+                        <div class="setting-info">
+                            <p class="setting-label">Heure du rappel</p>
+                        </div>
+                        <input type="time" class="time-input" id="reminderTime" value="20:00">
+                    </div>
+                </div>
+
+                <div class="settings-section">
+                    <h3 class="settings-title">Données</h3>
+                    <div class="setting-item">
+                        <button class="btn btn-secondary" id="exportDataBtn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7 10 12 15 17 10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                            Exporter toutes les données (JSON)
+                        </button>
+                    </div>
+                    <div class="setting-item">
+                        <button class="btn btn-danger" id="clearDataBtn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="3 6 5 6 21 6"></polyline>
+                                <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                            </svg>
+                            Effacer toutes les données
+                        </button>
+                    </div>
+                </div>
+
+                <div class="settings-section">
+                    <h3 class="settings-title">À propos</h3>
+                    <p class="about-text">MoodBoard v1.0.0</p>
+                    <p class="about-text">Votre compagnon pour suivre et comprendre vos émotions au quotidien.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <svg class="toast-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+        </svg>
+        <span class="toast-message"></span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
