@@ -1,46 +1,46 @@
 # Niko Niko SaaS 🌐
 
-Welcome to Niko Niko SaaS, a powerful and user-friendly web application designed to help you manage your tasks efficiently and effectively! 🚀✨  
+Bienvenue sur Niko Niko SaaS, une application web puissante et conviviale conçue pour vous aider à gérer vos tâches efficacement ! 🚀✨
 
-## Overview  
-Niko Niko SaaS is built with modern web technologies including **HTML**, **CSS**, and **JavaScript**. Our goal is to provide a seamless experience for users, enabling them to stay organized while enjoying beautiful aesthetics. 🎨💻  
+## Aperçu
+Niko Niko SaaS est construit avec les technologies web modernes incluant **HTML**, **CSS** et **JavaScript**. Notre objectif est de fournir une expérience fluide aux utilisateurs, leur permettant de rester organisés.
 
-## Features  
-- **Intuitive User Interface**: Easy to navigate and user-friendly. 🖱️  
-- **Responsive Design**: Accessible across all devices including desktops, tablets, and smartphones. 📱💻  
-- **Real-time Collaboration**: Work with your team in real-time, no matter where you are! 👥🤝  
-- **Task Management**: Create, update, and track your tasks with ease. 📋  
+## Fonctionnalités
+- **Interface Utilisateur Intuitive** : Facile à naviguer et conviviale. 🖱️
+- **Design Réactif** : Accessible sur tous les appareils incluant les ordinateurs de bureau, tablettes et smartphones. 📱💻
+- **Collaboration en Temps Réel** : Travaillez avec votre équipe en temps réel, où que vous soyez ! 👥🤝
+- **Gestion des Tâches** : Créez, mettez à jour et suivez vos tâches facilement. 📋
 
-## Technologies Used  
-- **HTML**: Structure your content elegantly. 📄  
-- **CSS**: Style your application to look stunning. 🎨  
-- **JavaScript**: Make your application interactive and dynamic. ⚡  
+## Technologies Utilisées
+- **HTML** : Structurez votre contenu élégamment. 📄
+- **CSS** : Stylez votre application pour qu'elle soit magnifique. 🎨
+- **JavaScript** : Rendez votre application interactive et dynamique. ⚡
 
-## Getting Started  
-To get started, clone the repository and open the `index.html` file in your browser. 🚀  
+## Premiers Pas
+Pour commencer, clonez le référentiel et ouvrez le fichier `index.html` dans votre navigateur. 🚀
 
 ```bash
-# Clone the repository
+# Clonez le référentiel
 git clone https://github.com/yoshiTorisutan-web/niko_niko_saas.git
 
-# Navigate to the project directory
+# Accédez au répertoire du projet
 cd niko_niko_saas
 
-# Open the index.html file
-open index.html  # (Change 'open' command based on your OS)
-```  
+# Ouvrez le fichier index.html
+open index.html  # (Changez la commande 'open' selon votre OS)
+```
 
-## Contributions  
-We welcome contributions! Feel free to fork the repository and submit a pull request. 📝  
+## Contributions
+Nous accueillons les contributions ! N'hésitez pas à forker le référentiel et soumettre une pull request. 📝
 
-## License  
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details. 📜  
+## Licence
+Ce projet est sous licence MIT - consultez le fichier [LICENSE](LICENSE) pour plus de détails. 📜
 
-## Contact  
-For inquiries, please reach out to [your_email@example.com]. 📧  
+## Contact
+Pour toute question, veuillez contacter [your_email@example.com]. 📧
 
-Thank you for your interest in Niko Niko SaaS! We hope you enjoy using it as much as we enjoyed building it! ❤️  
+Merci de votre intérêt pour Niko Niko SaaS ! Nous espérons que vous l'apprécierez autant que nous avons apprécié le créer ! ❤️
 
----  
+---
 
-> *"The best way to predict the future is to create it." - Peter Drucker*  
+> *« La meilleure façon de prédire l'avenir est de la créer. » - Peter Drucker*
